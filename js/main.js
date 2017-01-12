@@ -1,3 +1,12 @@
+// Variables
+var questions = [];
+var animationClass;
+var times = 0;
+var iteration = 2;
+
+if (animation === magic || animation === space) animationClass = 'magictime';
+if (animation === bounce || animation === zoom) animationClass = 'animated';
+
 $.fn.extend({
     animateCss: function(animationName, t=null) {
         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
@@ -8,15 +17,20 @@ $.fn.extend({
     }
 });
 
-var animationClass
-
-if (animation === magic || animation === space) animationClass = 'magictime';
-if (animation === bounce || animation === zoom) animationClass = 'animated';
-
-var times = 0;
-
-var iteration = 2;
 window.onload = start();
+
+// Methods
+$.getJSON('questions.json', function (data) {
+    if(lang == 'en'){
+         data.en.forEach(function (item) {
+             questions.push(item);
+        });
+     }else{
+         data.gr.forEach(function (item) {
+             questions.push(item);
+        });
+     }
+ });
 
 function start(){
     $('#logo').attr("src", "img/1.gif");
@@ -26,8 +40,6 @@ function start(){
         animate();
     }, 2000);
 }
-
-
 
 function animate() {
         if (iteration < 5) {
