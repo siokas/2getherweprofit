@@ -3,7 +3,15 @@ body{
     height: 100%;
 }
 
-html, body{height:100%; margin:0;padding:0}
+img{
+  width: 800px;
+}
+
+html, body{
+  height:100%; 
+  margin:0;
+  padding:0;
+}
  
 .container{
   height:100%;
@@ -65,3 +73,10 @@ nav a {
 nav a:hover{
   color: #fff;
 }
+
+@media (min-width:320px)  { img { max-width: 100%; height: auto; min-width: 320px;} }
+@media (min-width:481px)  { img { max-width: 100%; height: auto; min-width: 400px;} }
+@media (min-width:641px)  { img { max-width: 100%; height: auto; min-width: 500px;} }
+@media (min-width:961px)  { img { max-width: 100%; height: auto; min-width: 650px;} }
+@media (min-width:1025px) { img { max-width: 100%; height: auto; min-width: 700px;} }
+@media (min-width:1281px) { img { max-width: 100%; height: auto; min-width: 700px;} }
